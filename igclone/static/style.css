@@ -94,6 +94,11 @@
 .switch{
     margin-top:25px;
 }
+.switch a{
+    text-decoration: none;
+    font-weight: 400;
+    /* color: #E1E1E1; */
+}
 .sugges{
     display: flex;
     gap: 38%;
@@ -118,9 +123,19 @@
 .follow-link{
     margin-top: 10px;
     text-decoration: none;
+    font-weight: 500;
 }
 .all{
     text-decoration: none;
     font-weight: 700;
     color: #262626;
+}
+.list li{
+    list-style: none;
+    display: inline;
+    color: #d8d6d6;
+}
+.list p{
+    color: #d8d6d6;
+
 }
