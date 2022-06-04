@@ -139,3 +139,13 @@
     color: #d8d6d6;
 
 }
+
+
+/* feeds section */
+
+.feeds{
+    margin-top: 13px;
+}
+#feed{
+    height: 75vh;
+}
