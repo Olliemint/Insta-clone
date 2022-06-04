@@ -149,3 +149,25 @@
 #feed{
     height: 75vh;
 }
+.feedimg{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-top: 10px;
+
+}
+.details{
+    display: flex;
+    margin-left: 12px;
+    margin-top: 3px;
+    gap: 3%;
+}
+.specs{
+    display: flex;
+    margin-top: 15px;
+    gap: 18rem;
+}
+.post11{
+    width: 29.4rem;
+    margin-top: 12px;
+}
