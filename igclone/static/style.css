@@ -99,3 +99,28 @@
     gap: 38%;
 
 }
+.one{
+    display: flex;
+    gap: 2%;
+}
+.rnd{
+
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-top: 10px;
+
+}
+.fl{
+    display: flex;
+    gap: 52px;
+}
+.follow-link{
+    margin-top: 10px;
+    text-decoration: none;
+}
+.all{
+    text-decoration: none;
+    font-weight: 700;
+    color: #262626;
+}
