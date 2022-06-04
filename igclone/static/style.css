@@ -15,3 +15,57 @@
    justify-content: center;
 
 }
+.navitems{
+    display: flex;
+    gap: 42%;
+    margin-left: -22%;
+}
+.sicons{
+    display: flex;
+    gap: 18%;
+}
+.icons{
+    display: flex;
+    gap: 10%;
+}
+.logo h3{
+    font-family: 'Grand Hotel', cursive;
+    font-weight: 500;
+    font-size: 30px;
+
+}
+.logo a{
+    text-decoration: none;
+    color: black;
+}
+.searchbar input{
+    width: 270px;
+    background-color: #EFEFEF;
+    border-radius: 8px 8px 8px 8px;
+    height: 35px;
+    border: 2px solid #EFEFEF;
+    background: url('https://api.iconify.design/carbon/search.svg?color=%23262626&width=30&height=30') no-repeat / contain;
+}
+.searchbar input:focus{
+   outline: none;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 2%;
+}
+.col-md-4{
+    background-color: aquamarine;
+}
+.img{
+    height: 67px;
+    width: 67px;
+    border-radius: 50%;
+    border: 3px solid rgb(155, 8, 137);
+}
+.status{
+    display: flex;
+    gap: 10px;
+}
+
