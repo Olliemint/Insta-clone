@@ -170,4 +170,40 @@
 .post11{
     width: 29.4rem;
     margin-top: 12px;
+    background-color: red;
+    height: 29rem;
+   
+    
+}
+
+.cons{
+    display: flex;
+    gap: 20.5rem;
+    margin-left: 12px;
+    margin-top: 10px;
+}
+.saved img{
+    height: 35px;
+    width: 35px;
+}
+.ficons{
+    display: flex;
+    gap: 16%;
+}
+.cominput{
+    position: relative;
+    margin-top: -10px;
+}
+.comms{
+    width: 24rem;
+    background-color: #ffffff;
+    border: #ffffff;
+}
+.cominput input:focus{
+    outline: none;
+}
+.cominput button{
+    background-color: #ffffff;
+    border: #ffffff;
+    color: #66BFFA;
 }
