@@ -1,0 +1,24 @@
+{
+  "name": "instagram-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tailwind build igclone/static/src/tw.css -o igclone/static/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olliemint/Insta-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olliemint/Insta-clone/issues"
+  },
+  "homepage": "https://github.com/Olliemint/Insta-clone#readme",
+  "dependencies": {
+    "tailwindcss": "^2.2.16"
+  }
+}
