@@ -8,3 +8,33 @@
 
 }
 
+.myform{
+    display: grid;
+    place-content: center;
+    margin-top: 1%;
+}
+
+.logol h3{
+    font-family: 'Grand Hotel', cursive;
+    font-weight: 600;
+    font-size: 45px;
+    letter-spacing: 2px;
+    margin-top: 35px;
+
+}
+.para{
+    text-align: center;
+    font: 1em sans-serif;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.fb{
+    display: grid;
+    place-content: center;
+
+}
+.fb button{
+    width: 18rem;
+    font-weight: 600;
+}
