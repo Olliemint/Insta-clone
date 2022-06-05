@@ -52,3 +52,45 @@ hr{
     place-content: center;
     margin-top: -22px;
 }
+.tform{
+    display: grid;
+    place-content: center;
+
+}
+.tfield{
+    margin-top: 10px;
+}
+.details{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.details2{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.signup{
+    display: grid;
+    place-content: center;
+
+}
+
+.signup button{
+
+    width: 18rem;
+    
+
+}
+.imagecard{
+    display: grid;
+    place-content: center;
+    margin-top: 11px;
+
+
+}
+
+.imagecard p{
+    
+    margin-top: 15px;
+
+
+}

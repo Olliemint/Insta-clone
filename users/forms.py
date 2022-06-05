@@ -6,11 +6,11 @@ from django import forms
 
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'focus:outline-none','placeholder':'e.g example@gmail.com'}))
-    fullname = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'focus:outline-none','placeholder':'e.g john'}))
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'focus:outline-none','placeholder':'Email'}))
+    fullname = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'focus:outline-none','placeholder':'Full Name'}))
     
-    username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'focus:outline-none','placeholder':'e.g john'}))
-    password1 = forms.CharField(required=True,widget=forms.PasswordInput(attrs={'class':'focus:outline-none'}))
+    username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'focus:outline-none','placeholder':'Username'}))
+    password1 = forms.CharField(required=True,widget=forms.PasswordInput(attrs={'class':'focus:outline-none','placeholder':'Password'}))
     
     class Meta:
         model = User
