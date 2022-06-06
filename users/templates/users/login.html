@@ -1,0 +1,101 @@
+{% extends "users/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="myform">
+        <div class="card" style="width: 22rem;height: 38rem;">
+            <div class="logol">
+                <h3 class="text-center">Instagram</h3>
+            </div>
+           
+            <form action="" method="post">
+                {% csrf_token %}
+           
+            <div class="tform">
+                <div>
+               
+               
+                <div class="tfield">
+                    {{form.username}}
+                </div>
+                <div class="tfield">
+                    {{form.password}}
+                </div>
+                
+            </div>
+
+            </div>
+            {{form.errors}}
+            <div class="details">
+                <p class="text-muted text-center">People who use our service may have uploaded <br> your contact information to Instagram. Learn <br> More</p>
+            </div>
+            <div class="details2">
+                <p class="text-muted text-center">By signing up, you agree to our Terms , Data <br> Policy and Cookies Policy .</p>
+            </div>
+            <div class="signup">
+                <button class="btn btn-primary btn-sm" type="submit">Login</button>
+            </div>
+        </form>
+
+        </div>
+
+    </div>
+
+    <div class="imagecard">
+        <div class="card" style="width: 22rem;background-color: #ffffff;">
+            <p class="text-center">
+                Don't have an account? 
+                <span>
+                    <a href="">Sign up</a>
+                </span>
+
+            </p>
+        </div>
+
+    </div>
+
+    <div class="bottom">
+        <p class="text-center">Get the app</p>
+
+        <div class="playimg">
+            <div>
+            <span>
+            <img class="play" src="{% static 'images/apss.png' %}" alt="no image" srcset="">
+
+            </span>
+            <span>
+            <img class="play" src="{% static 'images/play.png' %}" alt="no image" srcset="">
+
+            </span>
+        </div>
+        
+        </div>
+    </div>
+
+    <div class="listdl text-muted">
+        <div>
+        <li>Meta</li>
+        <li>About</li>
+        <li>Blog</li>
+        <li>Jobs</li>
+        <li>Help</li>
+        <li>Api</li>
+        <li>Privacy</li>
+        <li>Terms</li>
+        <li>Top Accounts</li>
+        <li>Hashtags</li>
+        <li>Locations</li>
+        <li>Instagram lite</li>
+        <li>Contact Uploading &</li>
+        <li>Non-Users</li>
+    </div>
+    </div>
+    <div class="footer2">
+        <p class="text-muted text-center">© 2022 Instagram from Meta</p>
+    </div>
+</div>
+
+{% endblock %}
