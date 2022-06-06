@@ -175,14 +175,15 @@
         
     </div>
     <div class="sidebar">
+        {% if user.is_authenticated %}
         <div class="profile">
             <div>
-                <img class="img2" src="{% static 'images/prof2.jpg' %}" alt="" srcset="">
+                <img class="img2" src="{{user.profile.image.url}}" alt="" srcset="">
             </div>
             <div class="pf2">
                 <div class="usern">
-                    <h5>oliver koech</h5>
-                   <p class="text-muted">Oliver</p>
+                    <h5><span>{{user.last_name}} </span></h5>
+                   <p class="text-muted">{{user.username}}</p>
                 </div>
                 <div class="switch">
                     <a  href="">Switch</a>
@@ -191,6 +192,7 @@
                 
             </div>
         </div>
+        {% endif %}
         <div class="sugges">
             <p class="text-muted">Suggestions For You</p>
             <a class="all" href="">See All</a>
@@ -284,7 +286,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="{% url 'clone:home' %}" method="post" enctype="multipart/form-data">
+          <form action="{% url 'clone:add_post' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
             <label for="">feed image</label>

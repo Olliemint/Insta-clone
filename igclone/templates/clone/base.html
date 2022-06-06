@@ -68,11 +68,11 @@
                                     {% if user.is_authenticated %}
                                     <div class="dropdown">
                                         <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img class="rnd" src="{% static 'images/st1.jpeg' %}" alt="" srcset="">
+                                        <img class="rnd" src="{{user.profile.image.url}}" alt="" srcset="">
                                           
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton2">
-                                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                                          <li><a class="dropdown-item" href="{% url 'user:profile' %}">Profile</a></li>
                                           <li><a class="dropdown-item" href="#">Saved</a></li>
                                           <li><a class="dropdown-item" href="#">Settings</a></li>
                                           <li><a class="dropdown-item" href="#">Switch Accounts</a></li>

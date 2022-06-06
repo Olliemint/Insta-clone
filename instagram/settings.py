@@ -133,3 +133,5 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'clone:home'
 LOGOUT_REDIRECT_URL = 'user:login'
+
+LOGIN_URL = 'user:login'

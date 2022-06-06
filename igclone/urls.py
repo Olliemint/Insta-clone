@@ -5,6 +5,8 @@ app_name = 'clone'
 
 urlpatterns =[
     path('',views.post_view,name='home'),
+    path('posts/add',views.add_post,name='add_post'),
+
   
  
 ]

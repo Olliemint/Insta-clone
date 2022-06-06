@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Feed
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-
+@login_required
 def post_view(request):
     
     posts = Feed.objects.all()
@@ -20,10 +21,10 @@ def add_post(request):
         image = request.FILES.get('upload')
         
         caption = request.POST.get('caption')
+        print(image, caption)
         
-        post = Feed(image=image, caption=caption)
-        post.save()
-        
+        post = Feed.objects.create(image=image, caption=caption)
+        return redirect('clone:home')        
         
         
     
