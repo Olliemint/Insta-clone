@@ -65,7 +65,7 @@
                                             <span class="iconify" data-icon="ant-design:heart-outlined" style="color: #262626;" data-width="30" data-height="30"></span>
                                         </a>
                                     </div>
-
+                                    {% if user.is_authenticated %}
                                     <div class="dropdown">
                                         <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                         <img class="rnd" src="{% static 'images/st1.jpeg' %}" alt="" srcset="">
@@ -78,9 +78,10 @@
                                           <li><a class="dropdown-item" href="#">Switch Accounts</a></li>
 
                                           <li><hr class="dropdown-divider"></li>
-                                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                                          <li><a class="dropdown-item" href="{% url 'user:logout' %}">Logout</a></li>
                                         </ul>
                                       </div>
+                                      {% endif %}
                                         
                                             
                                         
