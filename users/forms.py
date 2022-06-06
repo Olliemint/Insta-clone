@@ -11,10 +11,12 @@ class RegisterForm(UserCreationForm):
     
     username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'focus:outline-none','placeholder':'Username'}))
     password1 = forms.CharField(required=True,widget=forms.PasswordInput(attrs={'class':'focus:outline-none','placeholder':'Password'}))
+    password2 = forms.CharField(required=True,widget=forms.PasswordInput(attrs={'class':'focus:outline-none','placeholder':'Confirm Password'}))
+
     
     class Meta:
         model = User
-        fields = ("email","fullname","username","password1")
+        fields = ("email","fullname","username","password1","password2")
     
     
 

@@ -94,3 +94,25 @@ hr{
 
 
 }
+.play{
+    height: 40px;
+}
+.playimg{
+    display: grid;
+    place-content: center;
+}
+.bottom{
+    margin-top: 30px;
+}
+
+.listdl{
+    display: grid;
+    place-content: center;
+
+}
+.listdl li{
+    list-style: none;
+    display: inline-block;
+    margin-top: 6vh;
+   
+}
