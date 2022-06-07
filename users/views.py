@@ -51,7 +51,7 @@ def edit_profile(request):
         gender = request.POST.get('gender')
         user = request.user
         
-        profile = Profile.objects.create(user=, image=image)
+        profile = Profile.objects.create(user=user, image=image)
         profile.save()
     
     

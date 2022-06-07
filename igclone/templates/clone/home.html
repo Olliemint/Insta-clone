@@ -89,7 +89,7 @@
 
                        <div class="specs">
                            <div>
-                               <h6>mercymay_</h6>
+                               <h6>{{post.author.name}}</h6>
                            </div>
                            <div class="moreicon">
                             <span class="iconify" data-icon="bx:dots-horizontal-rounded" style="color: #262626;" data-width="22" data-height="22"></span>
@@ -144,18 +144,23 @@
                     </div>
                     <div class="comtime">
                         <span class="text-muted">
-                            <a class="text-muted" href="">View all 12 comments</a>
+                            <a class="text-muted" href="">{{post.comments |length}}</a>
                         </span>
-                        <p class="text-muted">11 HOURS AGO</p>
+                        <p class="text-muted">{{post.created|timesince}}</p>
                     </div>
                     <hr>
                     <div class="cominput">
+                        <form action="" method="post">
+                            {% csrf_token %}
                         
                             <span class="iconify" data-icon="fluent:emoji-16-regular" data-width="30" data-height="30"></span>
                         
-                            <input class="comms" type="text" name="" id=""placeholder="Add a comment..." >
+                            <input class="comms" type="text" name="comment" id="comment"placeholder="Add a comment..." >
 
                             <span><button type="submit">Post</button> </span>
+
+
+                            </form>
 
                             
                         
