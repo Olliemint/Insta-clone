@@ -122,7 +122,7 @@ $ python manage.py test
 
 ## Licence
 
-Copyright (c) Ollimint - [MIT Licence](LICENSE)
+Copyright (c) Olliemint - [MIT Licence](LICENSE)
 
 ## Author Info
 
