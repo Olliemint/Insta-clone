@@ -85,11 +85,11 @@
                 <div class="card" id="feed" style="width: 29.5rem;">
                     
                    <div class="details">
-                    <img class="feedimg" src="{% static 'images/str7.jpg' %}" alt="" srcset="">
+                    <img class="feedimg" src="{{user.profile.image.url}}" alt="" srcset="">
 
                        <div class="specs">
                            <div>
-                               <h6>{{post.author.name}}</h6>
+                               <h6>{{post.author}}</h6>
                            </div>
                            <div class="moreicon">
                             <span class="iconify" data-icon="bx:dots-horizontal-rounded" style="color: #262626;" data-width="22" data-height="22"></span>
@@ -104,13 +104,22 @@
 
                        
                    </div>
+                   
                    <div class="posticons">
                        <div class="cons">
                            <div class="ficons">
-                           <a href="">
+                               <form action="{% url 'clone:comment' %}" method="post">
+                                {% csrf_token %}
+
+                             <input hidden type="text" name="my" id="my" value="{{post.id}}">
+
+                            
+
+                           <button type="submit" class="btn btn-light btn-sm">
                         <span class="iconify" data-icon="ant-design:heart-outlined" style="color: #262626;" data-width="30" data-height="30"></span>
 
-                           </a>
+                           </button>
+                        </form>
                            <a href="">
                             <span class="iconify" data-icon="ci:message-circle" style="color: #262626;" data-width="30" data-height="30" data-rotate="270deg"></span>
     
@@ -136,7 +145,7 @@
                    </div>
                    <div class="comlikes">
                     <div class="likes">
-                        <h6>196 likes</h6>
+                        <h6>{{post.likes.all.count}} like{{post.likes.all.count|pluralize}}</h6>
                     </div>
                     <div class="caption d-flex">
                      <h6>mercymay_ </h6>
@@ -144,15 +153,15 @@
                     </div>
                     <div class="comtime">
                         <span class="text-muted">
-                            <a class="text-muted" href="">{{post.comments |length}}</a>
+                            <a class="text-muted" data-bs-toggle="modal" data-bs-target="#pos{{post.id}}" href="" title="" style="text-decoration: none;">View all {{post.comments.all.count}} comment{{post.comments.all.count|pluralize}} </a>
                         </span>
                         <p class="text-muted">{{post.created|timesince}}</p>
                     </div>
                     <hr>
                     <div class="cominput">
-                        <form action="" method="post">
+                        <form action="{% url 'clone:home' %}" method="post">
                             {% csrf_token %}
-                        
+                             <input hidden type="text" name="myid" id="myid" value="{{post.id}}">
                             <span class="iconify" data-icon="fluent:emoji-16-regular" data-width="30" data-height="30"></span>
                         
                             <input class="comms" type="text" name="comment" id="comment"placeholder="Add a comment..." >
@@ -272,29 +281,24 @@
     
     </div>
 </div>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <span class="iconify" data-icon="bx:message-square-add" style="color: #262626;" data-width="30" data-height="30"></span>
-        
-      </button>
 
-
-
-<!-- Button trigger modal -->
 
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal fade" id="post" tabindex="-1" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="text-center" id="exampleModalLabel">Create new post</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" >
+
+            
           <form action="{% url 'clone:add_post' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
-            <label for="">feed image</label>
+        <label for="">feed image</label>
         <input type="file" name="upload" id="upload">
 
         <label for="">Caption</label>
@@ -305,14 +309,50 @@
 
           </form>
         </div>
+        </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
+ 
+  <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{post.id}}">
+    Launch static backdrop modal
+  </button>
+   -->
+  <!-- Modal -->
+
+ {% for post in posts %}
     
+<div class="modal fade" id="pos{{post.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <img src="{{post.image.url}}" alt="">
+          <{% for comment in post.comments.all %}
+          <p>{{comment.comment }}
+          {% endfor %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    
+ {% endfor %}
 
 
 

@@ -192,7 +192,7 @@
 }
 .cominput{
     position: relative;
-    margin-top: -10px;
+    
 }
 .comms{
     width: 24rem;
@@ -208,3 +208,8 @@
     color: #66BFFA;
 }
 
+.modal-body img{
+    height: 20vh;
+    width: 30%;
+   
+}

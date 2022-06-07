@@ -1,0 +1,16 @@
+{% extends 'clone/base.html' %}
+
+
+
+
+{% block content %}
+<h1>hello comments</h1>
+
+
+{% for comment in comments %}
+<h1>{{comment.comment}}</h1>
+
+{% endfor %}
+
+
+{% endblock %}

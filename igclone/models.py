@@ -7,14 +7,22 @@ class Feed(models.Model):
     image=models.ImageField(null=True)
     caption=models.CharField(max_length=150, null=False)
     author =models.ForeignKey(User, on_delete=models.CASCADE,blank=True,null=True)
+    comments = models.ManyToManyField(
+    'Comment', related_name='user_post', blank=True)
     created = models.DateTimeField(auto_now_add=True,null=True)
     
    
     likes = models.ManyToManyField(
-        User, related_name='like', blank=True)
+        User, related_name='feed_post', blank=True)
     
     def __str__(self):
         return self.caption
+    
+    
+    def total_likes(self):
+        
+        
+        return self.likes.count()
     
     
 class Comment(models.Model):
@@ -26,6 +34,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
+    
+    
 
 
 
