@@ -5,75 +5,117 @@
 {% block content %}
 
 <div class="container">
-    <div class="myform">
-        <div class="card" style="width: 22rem;height: 38rem;">
-            <div class="logol">
-                <h3 class="text-center">Instagram</h3>
-            </div>
-           
-            <form action="" method="post">
-                {% csrf_token %}
-           
-            <div class="tform">
-                <div>
-               
-               
-                <div class="tfield">
-                    {{form.username}}
+
+   
+
+   
+    
+<div class="pagecenter">
+    <div class="row justify-content-center" id="logins">
+        <div class="col-4">
+            <img src="{% static 'images/loginpg.png' %}" alt="no image" srcset="">
+
+        </div>
+        <div class="col-3 mx-4">
+            <div class="card" style="width: 22rem;height: 27rem;" id="depage">
+                <div class="instaheader">
+                    <h3 class="text-center">Instagram</h3>
                 </div>
-                <div class="tfield">
-                    {{form.password}}
+               
+                <form action="" method="post">
+                    {% csrf_token %}
+               
+                <div>
+                    <div class="formy">
+                   <div>
+                   
+                    <div class="loginput">
+                        <label for="">Username:</label>
+                        {{form.username}}
+                    </div>
+                    <div class="loginput">
+                        <label for="">Password:</label>
+                        {{form.password}}
+                    </div>
+                    
+                </div>
+               
+    
+                    
+                </div>
+               
+                </div>
+                <div class="btn1">
+                    <button class="btn btn-primary btn-md" type="submit">Login</button>
+                </div>
+
+                <hr class="hr1">
+                
+                <p class="or1 text-center">OR</p>
+                <hr class="hr2">
+                {{form.errors}}
+               
+            </form>
+
+            <div class="fb1">
+                <a href="">
+                    <span class="iconify" data-icon="logos:facebook" data-width="30" data-height="30"></span>
+                    <span class="mx-2">Log in with Facebook</span> 
+                </a>
+            </div>
+            <div class="forgot">
+                <p class="text-center">
+                    <a href="">
+                        Forgot password?
+                    </a>
+                </p>
+            </div>
+    
+            </div>
+            
+            <div>
+                <div class="card22">
+                <div class="card" style="width: 22rem;background-color: #ffffff;">
+                    <p class="text-center linka">
+                        Don't have an account? 
+                        <span>
+                            <a href="{% url 'user:register' %}">Sign up</a>
+                        </span>
+        
+                    </p>
+                </div>
+            </div>
+        
+            </div>
+            <div>
+                <p class="text-center get">Get the app</p>
+        
+                <div class="playimg">
+                    <div>
+                    <span>
+                    <img class="play" src="{% static 'images/apss.png' %}" alt="no image" srcset="">
+        
+                    </span>
+                    <span>
+                    <img class="play" src="{% static 'images/play.png' %}" alt="no image" srcset="">
+        
+                    </span>
                 </div>
                 
+                </div>
             </div>
-
-            </div>
-            {{form.errors}}
-            <div class="details">
-                <p class="text-muted text-center">People who use our service may have uploaded <br> your contact information to Instagram. Learn <br> More</p>
-            </div>
-            <div class="details2">
-                <p class="text-muted text-center">By signing up, you agree to our Terms , Data <br> Policy and Cookies Policy .</p>
-            </div>
-            <div class="signup">
-                <button class="btn btn-primary btn-sm" type="submit">Login</button>
-            </div>
-        </form>
-
+            
         </div>
-
     </div>
+</div>
 
-    <div class="imagecard">
-        <div class="card" style="width: 22rem;background-color: #ffffff;">
-            <p class="text-center">
-                Don't have an account? 
-                <span>
-                    <a href="{% url 'user:register' %}">Sign up</a>
-                </span>
-
-            </p>
-        </div>
-
-    </div>
-
-    <div class="bottom">
-        <p class="text-center">Get the app</p>
-
-        <div class="playimg">
-            <div>
-            <span>
-            <img class="play" src="{% static 'images/apss.png' %}" alt="no image" srcset="">
-
-            </span>
-            <span>
-            <img class="play" src="{% static 'images/play.png' %}" alt="no image" srcset="">
-
-            </span>
-        </div>
         
-        </div>
-    </div>
+        
+
+    
+    
+
+    
 
     <div class="listdl text-muted">
         <div>
@@ -91,11 +133,14 @@
         <li>Instagram lite</li>
         <li>Contact Uploading &</li>
         <li>Non-Users</li>
+        
     </div>
     </div>
     <div class="footer2">
         <p class="text-muted text-center">© 2022 Instagram from Meta</p>
     </div>
+
+
 </div>
 
 {% endblock %}

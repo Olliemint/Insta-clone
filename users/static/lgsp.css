@@ -7,6 +7,98 @@
     font-family: 'Poppins', sans-serif;
 
 }
+/*  */
+
+.pagecenter{
+    margin-top: 80px;
+    
+}
+
+#depage{
+    margin-top: 50px;
+}
+.instaheader h3{
+    font-family: 'Grand Hotel', cursive;
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: 1em;
+
+}
+
+.loginput{
+    margin: 10px;
+}
+
+.formy{
+    margin-top: 3vh;
+    display: grid;
+    place-content: center;
+
+    
+}
+
+.btn1{
+    display: flex;
+    justify-content: center;
+}
+.btn1 button{
+    width: 20em;
+}
+
+.hr1{
+    margin-left: 14px;
+    width: 8em;
+}
+
+.or1{
+    margin-top: -29px;
+}
+
+.hr2{
+    width: 8em;
+    margin-left: 12.5em;
+    margin-top: -27px;
+}
+.fb1{
+    display: grid;
+    place-content: center;
+    margin-top: 15px;
+
+}
+.fb1 a{
+    text-decoration: none;
+    color: #385185;
+    font-weight: 700;
+}
+
+.forgot a{
+    text-decoration: none;
+    color: #385185;
+}
+.forgot{
+    margin-top: 15px;
+}
+
+.card22{
+    margin-top: 10px;
+}
+.linka{
+    margin-top: 20px;
+}
+
+.linka a{
+    text-decoration: none;
+    font-weight: 700;
+}
+.get{
+    margin-top: 15px;
+}
+
+
+
+
+
+
 
 .myform{
     display: grid;
