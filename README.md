@@ -6,7 +6,7 @@
 
 ### Screenshot of the App
 
-<img src="https://raw.githubusercontent.com/Olliemint/Pixel-gallery/main/static/images/pixels-landing.png">
+<img src="https://raw.githubusercontent.com/Olliemint/Insta-clone/main/igclone/static/images/landing.png">
 
 ## Table of Content
 
