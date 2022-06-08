@@ -214,17 +214,4 @@
    
 }
 
-.dbmenu{
-    margin-top: -20px;
-    background-color: #66BFFA;
-}
-
-.dbmenu:hover{
-    cursor: pointer;
-}
-
-.col-md-6 img{
-    height: 50vh;
-    width: 50vh;
-}
 
