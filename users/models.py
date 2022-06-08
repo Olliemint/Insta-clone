@@ -13,4 +13,14 @@ class Profile(models.Model):
         return self.user.username 
     
     
+    def save_profile(self):
+        self.user
+        
+    def save_user(self):
+        self.save()   
+
+    def delete_profile(self):
+        self.delete()
+    
+    
 

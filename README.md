@@ -4,6 +4,10 @@
 
 ### By: Oliver Maiyo
 
+### Screenshot of the App
+
+<img src="https://raw.githubusercontent.com/Olliemint/Pixel-gallery/main/static/images/pixels-landing.png">
+
 ## Table of Content
 
 - [Description](#description)

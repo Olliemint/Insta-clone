@@ -19,6 +19,16 @@ class Feed(models.Model):
         return self.caption
     
     
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+    def total_likes(self):
+        return self.likes.count()
+    
+    
     def total_likes(self):
         
         
