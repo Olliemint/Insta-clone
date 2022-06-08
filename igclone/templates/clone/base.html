@@ -28,7 +28,7 @@
                             </div>
                             <div class="sicons">
                                 <div class="searchbar">
-                                    <input type="search" name="" id="">
+                                    <input type="search" name="" id="" placeholder="Search">
                                     
                                 </div>
                                 <div class="icons">
@@ -66,11 +66,12 @@
                                         </a>
                                     </div>
                                     {% if user.is_authenticated %}
+                                    <div class="dbmenu" style="cursor: pointer;margin-top: -11px;">
                                     <div class="dropdown">
-                                        <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img class="rnd" src="{{user.profile.image.url}}" alt="" srcset="">
+                                        
+                                        <img id="dropdown" class="dropdown-toggle rnd" src="{{user.profile.image.url}}" alt="" srcset="" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                           
-                                        </button>
+                                        
                                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton2">
                                           <li><a class="dropdown-item" href="{% url 'user:profile' %}">Profile</a></li>
                                           <li><a class="dropdown-item" href="#">Saved</a></li>
@@ -81,6 +82,7 @@
                                           <li><a class="dropdown-item" href="{% url 'user:logout' %}">Logout</a></li>
                                         </ul>
                                       </div>
+                                    </div>
                                       {% endif %}
                                         
                                             

@@ -148,7 +148,7 @@
                         <h6>{{post.likes.all.count}} like{{post.likes.all.count|pluralize}}</h6>
                     </div>
                     <div class="caption d-flex">
-                     <h6>mercymay_ </h6>
+                     <h6>{{post.author}}_</h6>
                      <span>{{post.caption}}</span>
                     </div>
                     <div class="comtime">
@@ -330,23 +330,40 @@
  {% for post in posts %}
     
 <div class="modal fade" id="pos{{post.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="text-center" id="exampleModalLabel">{{post.author}}</h5>
+
+          
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6" style="width: 200vh;">
+          <img src="{{post.image.url}}" alt="" style="height: 50vh;width: 50vh;">
 
-          <img src="{{post.image.url}}" alt="">
-          <{% for comment in post.comments.all %}
-          <p>{{comment.comment }}
-          {% endfor %}
+
+                    </div>
+                    <div class="col-md-6" style="width: 200vh;">
+                        <ul class="list-group list-group-flush">
+                        {% for comment in post.comments.all %}
+
+                            <li class="list-group-item">{{comment.comment }}</li>
+                            {% endfor %}
+                            
+                          </ul>
+                        
+        
+                    </div>
+                </div>
+            </div>
+
+          
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div>
+       
       </div>
     </div>
   </div>
