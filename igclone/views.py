@@ -15,10 +15,6 @@ def post_view(request):
     posts = Feed.objects.order_by('-created').all()
     
     
-   
-    
-    
-    
     
     if request.method == 'POST':
         comment = request.POST.get('comment')

@@ -24,30 +24,36 @@
             <div>
                 <span class="or">OR</span>
             </div>
+             {% if messages %}
+                        <div class="messages">
+                            {% for message in messages %}
+                            <h4 class="text-center text-danger">{{message}}</h4>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
             <form action="" method="post">
                 {% csrf_token %}
            
             <div class="tform">
-                <div>
-                <div class="tfield">
-                    {{form.email}}
+                <div class="form-flex">
+                   
+                    <div class="register-input">
+                        <input type="text" name="email" placeholder="Mobile Number or Email">
+                    </div>
+                    <div class="register-input">
+                        <input type="text" name="fullname" placeholder="Full Name">
+                    </div>
+                    <div class="register-input">
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                    <div class="register-input">
+                        <input type="password" name="password" placeholder="Password" id="">
+                    </div>
+                    
                 </div>
-                <div class="tfield">
-                    {{form.fullname}}
-                </div>
-                <div class="tfield">
-                    {{form.username}}
-                </div>
-                <div class="tfield">
-                    {{form.password1}}
-                </div>
-                <div class="tfield">
-                    {{form.password2}}
-                </div>
-            </div>
 
             </div>
-            {{form.errors}}
+           
             <div class="details">
                 <p class="text-muted text-center">People who use our service may have uploaded <br> your contact information to Instagram. Learn <br> More</p>
             </div>

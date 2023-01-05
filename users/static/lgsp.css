@@ -24,18 +24,28 @@
     margin-top: 1em;
 
 }
+.form-flex{
+    position: relative;
+    left: 5%;
+}
 
-.loginput{
+
+
+.group-input input{
+    background-color: #FAFAFA;
+    width: 80%;
+    height: 38px;
+    border-radius: 5px;
     margin: 10px;
+    border: 1px solid #DBDBDB;
+
+}
+.group-input input::placeholder{
+    position: relative;
+    left: 5px;
 }
 
-.formy{
-    margin-top: 3vh;
-    display: grid;
-    place-content: center;
 
-    
-}
 
 .btn1{
     display: flex;
@@ -144,14 +154,28 @@ hr{
     place-content: center;
     margin-top: -22px;
 }
-.tform{
-    display: grid;
-    place-content: center;
 
+.form-flex{
+    position: relative;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
 }
-.tfield{
-    margin-top: 10px;
+.form-flex input{
+    width: 80%;
+    height: 39px;
+    background-color: #FAFAFA;
+    border: 1.5px solid #A8A8A8;
+    border-radius: 5px;
+    color: #A4A4A4;
 }
+.form-flex input::placeholder{
+    position: relative;
+    left: 5px;
+}
+
 .details{
     font-size: 14px;
     margin-top: 10px;

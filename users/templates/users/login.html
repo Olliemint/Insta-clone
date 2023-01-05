@@ -26,16 +26,23 @@
                     {% csrf_token %}
                
                 <div>
-                    <div class="formy">
-                   <div>
                    
-                    <div class="loginput">
-                        <label for="">Username:</label>
-                        {{form.username}}
+                     {% if messages %}
+                        <div class="messages">
+                            {% for message in messages %}
+                            <h4 class="text-center text-danger">{{message}}</h4>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    
+                    <div class="formy">
+                   <div class="form-flex">
+                   
+                    <div class="group-input">
+                        <input type="text" name="username" placeholder="Username or email">
                     </div>
-                    <div class="loginput">
-                        <label for="">Password:</label>
-                        {{form.password}}
+                    <div class="group-input">
+                        <input type="password" name="password" placeholder="Password" id="">
                     </div>
                     
                 </div>
