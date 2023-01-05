@@ -5,9 +5,86 @@
 {% block content %}
 
 
-<h1>{{user.username}}</h1>
-<img src="{{user.profile.image.url}}" alt="">
+<div class="profile-section">
+    <div class="image px-2">
+        <img src="{{profile.profile_img.url}}" alt="" >
+        <p>
+            <strong class="px-5">{{user.username}}</strong>
+        </p>
+    </div>
+    <div class="post px-2">
+        <strong>0</strong>
+        <p>Posts</p>
+    </div>
+    <div class="followers px-2">
+        <strong>0</strong>
+        <p>Followers</p>
+    </div>
+    <div class="following px-2">
+        <strong class="text-center">0</strong>
+        <p>Following</p>
+    </div>
+</div>
 
+<!-- Button trigger modal -->
+<div class="edit-profile">
+    <button type="button" class="btn bg-gray-400" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Edit profile
+</button>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content modal-dialog modal-dialog-scrollable">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div >
+        <form action="" method="POST" enctype="multipart/form-data" class="profile-form">
+            {% csrf_token %}
+            <div class="myprofile">
+         <img  src="{{profile.profile_img.url}}" alt="" >
+
+            </div>
+           <div class="change-img">
+             <label for="">
+                <strong>Change image</strong>
+             </label>
+            <input name="image" type="file" src="" alt="">
+           </div>
+           <div class="user-name">
+             <label for="">
+                <strong>Username</strong>
+             </label>
+            <input name="username" type="text" value="{{profile.user.username}}" class="form-control">
+
+            
+           </div>
+            <div class="bio">
+                <label for="">
+                <strong>Bio</strong>
+             </label>
+                <textarea name="bio" class="form-control" >{{profile.bio}}</textarea>
+            </div>
+            <div class="location">
+                <label for="">
+                <strong>Location</strong>
+             </label>
+            <input name="location" type="text" value="{{profile.location}}" class="form-control">
+                
+            </div>
+        <button type="submit" class="btn btn-success">Update</button>
+
+        </form>
+       </div>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
 
 {% endblock %}

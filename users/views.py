@@ -78,9 +78,39 @@ def Register_user(request,min_length=8):
 
 
 def profile(request):
+    user_profile = Profile.objects.get(user=request.user)
+    
+    if request.method == 'POST':
+        if request.FILES.get('image') is None:
+            location = request.POST.get('location')
+            bio = request.POST.get('bio')
+            username = request.POST.get('username')
+            
+            user_profile.bio=bio
+            user_profile.user.username =username
+            user_profile.location=location
+            user_profile.save()
+            return redirect('user:profile')
+        if request.FILES.get('image') != None:
+            image= request.FILES.get('image')
+            location = request.POST.get('location')
+            bio = request.POST.get('bio')
+            username = request.POST.get('username')
+            
+            user_profile.profile_img = image
+            user_profile.bio=bio
+            user_profile.user.username =username
+            user_profile.location=location
+            user_profile.save()
+            return redirect('user:profile')
+            
+        
+    context={
+        "profile": user_profile
+    }
     
     
-    return render(request, 'users/profile.html')
+    return render(request, 'users/profile.html',context)
 
 
 def edit_profile(request):
